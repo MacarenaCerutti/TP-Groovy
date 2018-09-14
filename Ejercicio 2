@@ -64,5 +64,9 @@ class Curso {
         
         return sumaCalificaciones/estudiantes.size()
      }
+     //#estudiantesNoCatamarquenios(): Retorna una colección con todos los estudiantes que no nacieron en Catamarca 
+    def estudiantesNoCatamarquenios(){
+        return this.estudiantes.findAll{it.ciudadNatal!="Catamarca"}
+    }
 }
 
