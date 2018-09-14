@@ -115,4 +115,91 @@ def calificacionMasFrecuente() {
      }
 }
 
+static main( args ){
+    def curso1 = new Curso() //Creamos un curso
 
+    def estudiante1 = new Estudiante(nombre:"Nombre1", dni:"111", edad: 11, ciudadNatal: "ciudad1", calificacion: 1) //Creamos unos estudiantes
+    def estudiante2 = new Estudiante(nombre:"Nombre2", dni:"222", edad: 22, ciudadNatal: "ciudad2", calificacion: 2)
+    def estudiante3 = new Estudiante(nombre:"Nombre3", dni:"333", edad: 33, ciudadNatal: "ciudad3", calificacion: 3)
+    def estudiante4 = new Estudiante(nombre:"Nombre4", dni:"444", edad: 44, ciudadNatal: "ciudad4", calificacion: 4)
+    def estudiante5 = new Estudiante(nombre:"Nombre5", dni:"555", edad: 55, ciudadNatal: "ciudad5", calificacion: 5)
+    def estudiante6 = new Estudiante(nombre:"Nombre6", dni:"666", edad: 66, ciudadNatal: "ciudad6", calificacion: 6)
+    def estudiante7 = new Estudiante(nombre:"Nombre7", dni:"777", edad: 77, ciudadNatal: "Catamarca", calificacion: 7)
+    def estudiante8 = new Estudiante(nombre:"Nombre8", dni:"888", edad: 88, ciudadNatal: "ciudad8", calificacion: 8)
+    def estudiante9 = new Estudiante(nombre:"Nombre9", dni:"999", edad: 99, ciudadNatal: "ciudad9", calificacion: 9)
+    def estudiante10 = new Estudiante(nombre:"Nombre10", dni:"1010", edad: 1010, ciudadNatal: "ciudad10", calificacion: 10)
+    def estudiante11 = new Estudiante(nombre:"Nombre11", dni:"1111", edad: 1111, ciudadNatal: "ciudad11", calificacion: 10)
+
+    curso1.agregarEstudiante(estudiante1)    //Los agregamos al curso
+    curso1.agregarEstudiante(estudiante2)
+    curso1.agregarEstudiante(estudiante3)
+    curso1.agregarEstudiante(estudiante4)
+    curso1.agregarEstudiante(estudiante5)
+    curso1.agregarEstudiante(estudiante6)
+    curso1.agregarEstudiante(estudiante7)
+    curso1.agregarEstudiante(estudiante8)
+    curso1.agregarEstudiante(estudiante9)
+    curso1.agregarEstudiante(estudiante10)
+    
+    println "La cantidad de alumnos inscriptos es: "+curso1.cantidadDeEstudiantesInscriptos() + "\n"  //Usamos la funcion para saber la cantidad de aliumnos en el curso
+    
+    println "Los Estudiantes son:"
+    println curso1.estudiantes().each{      //usamos la funcion estudianotes para obtenerlos y mostrarlos
+        println "Nombre: $it.nombre - Dni: $it.dni - Edad: $it.edad - Ciudad: $it.ciudadNatal - Calificacion: $it.calificacion"
+    }
+    
+    println "\n"    
+
+    println "Los Estudiantes aprobados son:"
+    println curso1.estudiantesAprobados().each{      //usamos la funcion estudianotes para obtenerlos y mostrarlos
+        println "Nombre: $it.nombre - Dni: $it.dni - Edad: $it.edad - Ciudad: $it.ciudadNatal - Calificacion: $it.calificacion"
+    }
+
+    println "\n" 
+    //Probamos la funcion existeEstudiante 
+    println "El estudiante "+ estudiante1.getNombre()+" Se encuentra en el curso? : "+ curso1.existeEstudiante(estudiante1)
+    println "El estudiante "+ estudiante1.getNombre()+" Se encuentra en el curso? : "+ curso1.existeEstudiante(estudiante11)
+
+    println "\n" 
+    //Probamos la funcion existeEstudianteConNotaDiez()
+    println "Existe algun estudiante con nota 10? :" + curso1.existeEstudianteConNotaDiez()
+
+    println "\n"
+    //existeEstudianteLlamado()
+    println "Existe algun estudiante llamado Nombre1? :" + curso1.existeEstudianteLlamado("Nombre1")
+
+    println "\n"
+    //Probamos la funcion porcentajeDeAprobados()
+    println "El porcentaje de Alumnos Aprobados es de: " + curso1.porcentajeDeAprobados()+"%"
+
+    
+    println "\n"
+    //Probamos la funcion promedioDeCalificaciones
+    println "El promedio de calificaciones es: " + curso1.promedioDeCalificaciones()
+
+    println "\n"
+    //Probamos la funcion estudiantesNoCatamarquenios
+    println "Los estudiantes que no nacieron en catamarca son:"
+    println curso1.estudiantesNoCatamarquenios().each{      //usamos la funcion estudianotes para obtenerlos y mostrarlos
+        println "Nombre: $it.nombre - Dni: $it.dni - Edad: $it.edad - Ciudad: $it.ciudadNatal - Calificacion: $it.calificacion"
+    }
+
+
+    println "\n" 
+    //Probamos la funcion unDesastre()
+    println "Todos los alumnos desaprobaron? :" + curso1.unDesastre()
+
+
+    
+    println "\n"   
+    
+    //Probamos la funcion resetearNotas
+    println "Los alumnos con las notas receteadas son:"
+    curso1.resetearNotas()    
+    println curso1.estudiantes().each{
+        println "Nombre: $it.nombre - Dni: $it.dni - Edad: $it.edad - Ciudad: $it.ciudadNatal - Calificacion: $it.calificacion"
+    }
+    
+     println "\n"  
+
+}
