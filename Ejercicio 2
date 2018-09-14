@@ -12,5 +12,10 @@ class Curso {
     def resetearNotas() {
          this.estudiantes.each{it.calificacion=0}               
     }
+    
+     //#agregarEstudiante(unEstudiante): Agrega unEstudiante al curso
+    def agregarEstudiante(Estudiante unEsdiante){
+        this.estudiantes.add(unEstudiante)
+    }
 }
 
