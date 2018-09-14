@@ -37,5 +37,22 @@ class Curso {
     def existeEstudiante(Estudiante unEstudiante){
         return this.estudiantes.any{it.dni==unEstudiante.dni}
     }
+    
+    //#existeEstudianteConNotaDiez(): Determina si algún alumno obtuvo la calificación 10 
+    def existeEstudianteConNotaDiez(){
+        return this.estudiantes.any{it.calificacion==10}
+    }
+
+    //#existeEstudianteLlamado(unNombre)(): Indica si el estudiante llamado “unNombre” se encuentra inscripto en el curso 
+    def existeEstudianteLlamado(String unNombre){
+        return this.estudiantes.any{it.nombre.equals(unNombre)}
+    }
+
+    //#porcentajeDeAprobados(): Retorna en porcentaje de estudiantes aprobados
+    def porcentajeDeAprobados(){
+        List aprobados=this.estudiantes.findAll{it.calificacion>4}
+        int porcentaje = (aprobados.size()*100)/estudiantes.size()
+        return porcentaje
+    }
 }
 
