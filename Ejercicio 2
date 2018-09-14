@@ -68,5 +68,14 @@ class Curso {
     def estudiantesNoCatamarquenios(){
         return this.estudiantes.findAll{it.ciudadNatal!="Catamarca"}
     }
+    
+    //#unDesastre(): Retorna verdadero si todos los estudiantes desaprobaron el curso  
+    def unDesastre(){
+        List aprobados = this.estudiantes.findAll{it.calificacion>4}
+        if(aprobados.size()==0){
+            return true
+        }
+    return false
+}
 }
 
