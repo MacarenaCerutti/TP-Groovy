@@ -113,3 +113,9 @@ def calificacionMasFrecuente() {
      }
 }
 
+static main( args ){
+ def estudiante = new Estudiante()
+//estudiante.setNombre("Groovy")
+//println( estudiante.greet() )
+}
+
