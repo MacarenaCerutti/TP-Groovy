@@ -54,5 +54,15 @@ class Curso {
         int porcentaje = (aprobados.size()*100)/estudiantes.size()
         return porcentaje
     }
+    
+// #promedioDeCalificaciones(): Calcula el promedio de las calificaciones obtenidas por los alumnos 
+    def promedioDeCalificaciones(){
+        int sumaCalificaciones
+        estudiantes.each{
+           sumaCalificaciones++ 
+        }
+        
+        return sumaCalificaciones/estudiantes.size()
+     }
 }
 
