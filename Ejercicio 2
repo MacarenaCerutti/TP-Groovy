@@ -7,25 +7,25 @@
 }
 class Curso {
     List estudiantes=[]
-
+    
     //#resetearNotas():Pone en cero las calificaciones de todos los estudiantes. 
     def resetearNotas() {
          this.estudiantes.each{it.calificacion=0}               
     }
-    
-     //#agregarEstudiante(unEstudiante): Agrega unEstudiante al curso
-    def agregarEstudiante(Estudiante unEsdiante){
+
+    //#agregarEstudiante(unEstudiante): Agrega unEstudiante al curso
+    def agregarEstudiante(unEstudiante){
         this.estudiantes.add(unEstudiante)
     }
-    
+
     //#cantidadDeEstudiantesInscriptos(): Retorna la cantidad de alumnos que se inscribieron al curso 
     def cantidadDeEstudiantesInscriptos(){
-        return this.estiudiantes.size()
+        return this.estudiantes.size()
     }
-    
+
     //#estudiantes(): Retorna la colección de estudiantes del curso
     def estudiantes(){
-        return this.estiudiantes
+        return this.estudiantes
     }
 
     // #estudiantesAprobados(): Retorna una colección con todos los estudiantes que aprobaron el curso (calificación superior a 4) 
@@ -37,7 +37,7 @@ class Curso {
     def existeEstudiante(Estudiante unEstudiante){
         return this.estudiantes.any{it.dni==unEstudiante.dni}
     }
-    
+
     //#existeEstudianteConNotaDiez(): Determina si algún alumno obtuvo la calificación 10 
     def existeEstudianteConNotaDiez(){
         return this.estudiantes.any{it.calificacion==10}
@@ -54,29 +54,22 @@ class Curso {
         int porcentaje = (aprobados.size()*100)/estudiantes.size()
         return porcentaje
     }
-    
-// #promedioDeCalificaciones(): Calcula el promedio de las calificaciones obtenidas por los alumnos 
+
+    // #promedioDeCalificaciones(): Calcula el promedio de las calificaciones obtenidas por los alumnos 
     def promedioDeCalificaciones(){
         int sumaCalificaciones
-        estudiantes.each{
-           sumaCalificaciones++ 
-        }
+        
+        for ( def est : estudiantes() ) {   
+            sumaCalificaciones=sumaCalificaciones+est.calificacion
+       }
         
         return sumaCalificaciones/estudiantes.size()
      }
-     //#estudiantesNoCatamarquenios(): Retorna una colección con todos los estudiantes que no nacieron en Catamarca 
+
+    //#estudiantesNoCatamarquenios(): Retorna una colección con todos los estudiantes que no nacieron en Catamarca 
     def estudiantesNoCatamarquenios(){
         return this.estudiantes.findAll{it.ciudadNatal!="Catamarca"}
     }
-    
-    //#unDesastre(): Retorna verdadero si todos los estudiantes desaprobaron el curso  
-    def unDesastre(){
-        List aprobados = this.estudiantes.findAll{it.calificacion>4}
-        if(aprobados.size()==0){
-            return true
-        }
-    return false
-}
 
 //#Calificación más frecuente del curso:Retorna la calificación más frecuente del curso
 def calificacionMasFrecuente() {
@@ -113,9 +106,4 @@ def calificacionMasFrecuente() {
      }
 }
 
-static main( args ){
- def estudiante = new Estudiante()
-//estudiante.setNombre("Groovy")
-//println( estudiante.greet() )
-}
 
