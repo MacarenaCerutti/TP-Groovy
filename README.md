@@ -6,7 +6,19 @@ b) 11500
 
 Explicación
 
-a)
+a) gerente.aportes()  
+
+	Float aportes(){    
+	return this.montoBasico() * 0.05 
+	}
+
+10000 * 0.05= 5000
+
+El valor 10000 lo obtenemos del método:
+
+	Float montoBasico(){  
+ 	return 10000 
+	}
 
 b) gerente.calcularSueldo() //Utiliza el método del padre EmpleadoJerarquico ya qué en Gerente no está sobreescrito
 
