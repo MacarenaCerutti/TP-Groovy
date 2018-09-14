@@ -17,5 +17,10 @@ class Curso {
     def agregarEstudiante(Estudiante unEsdiante){
         this.estudiantes.add(unEstudiante)
     }
+    
+    //#cantidadDeEstudiantesInscriptos(): Retorna la cantidad de alumnos que se inscribieron al curso 
+    def cantidadDeEstudiantesInscriptos(){
+        return this.estiudiantes.size()
+    }
 }
 
