@@ -78,7 +78,7 @@ class Curso {
     return false
 }
 
-//Calificación más frecuente del curso
+//#Calificación más frecuente del curso:Retorna la calificación más frecuente del curso
 def calificacionMasFrecuente() {
      List notas=[]
 
