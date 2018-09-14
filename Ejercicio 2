@@ -22,5 +22,20 @@ class Curso {
     def cantidadDeEstudiantesInscriptos(){
         return this.estiudiantes.size()
     }
+    
+    //#estudiantes(): Retorna la colección de estudiantes del curso
+    def estudiantes(){
+        return this.estiudiantes
+    }
+
+    // #estudiantesAprobados(): Retorna una colección con todos los estudiantes que aprobaron el curso (calificación superior a 4) 
+    def estudiantesAprobados(){
+        return this.estudiantes.findAll{it.calificacion>4}
+    }
+
+    // #existeEstudiante(unEstudiante): Indica si “unEstudiante” se encuentra inscripto en el curso 
+    def existeEstudiante(Estudiante unEstudiante){
+        return this.estudiantes.any{it.dni==unEstudiante.dni}
+    }
 }
 
