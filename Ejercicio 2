@@ -5,4 +5,12 @@
     String ciudadNatal
     int calificacion
 }
+class Curso {
+    List estudiantes=[]
+
+    //#resetearNotas():Pone en cero las calificaciones de todos los estudiantes. 
+    def resetearNotas() {
+         this.estudiantes.each{it.calificacion=0}               
+    }
+}
 
